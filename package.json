@@ -18,11 +18,13 @@
     }
   },
   "lint-staged": {
-    "*.{js,jsx,json,ts,tsx,md}": [
-      "prettier --ignore-path .gitignore --write",
+    "*": [
+      "prettier --ignore-path .gitignore --write"
+    ],
+    "*.{js,ts}": [
       "eslint --ignore-path .gitignore --fix"
     ],
-    "*.{ts,tsx}": [
+    "*.ts": [
       "tsc --pretty"
     ]
   },
