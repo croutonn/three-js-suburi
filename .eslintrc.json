@@ -1,0 +1,48 @@
+{
+  "root": true,
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "extends": ["@croutonn/eslint-config/javascript-loose"],
+  "rules": {
+    "no-restricted-imports": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.js"],
+      "rules": {
+        "import/no-extraneous-dependencies": "off"
+      }
+    },
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      },
+      "extends": ["@croutonn/eslint-config/typescript-loose"],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    },
+    {
+      "files": ["**/*.d.ts"],
+      "extends": ["@croutonn/eslint-config/typescript-declare"]
+    },
+    {
+      "files": [
+        "**/test/**/*.ts",
+        "**/test/**/*.tsx",
+        "**/tests/**/*.ts",
+        "**/tests/**/*.tsx",
+        "**/__tests__/**/*.ts",
+        "**/__tests__/**/*.tsx",
+        "**/*.test.ts",
+        "**/*.test.tsx",
+        "**/*.spec.ts",
+        "**/*.spec.tsx"
+      ],
+      "extends": ["@croutonn/eslint-config/typescript-test"]
+    }
+  ]
+}
